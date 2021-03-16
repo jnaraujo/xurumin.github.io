@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xurumin - An awesome discord bot</title>
+</head>
+<body>
+    I`m redirecting you... Just a second!
+    <script>
+        var userLang = navigator.language || navigator.userLanguage; 
+        var currentURL = window.location.href
+        switch (userLang) {
+            case "pt-BR":
+                window.location.href = `${currentURL}/ptbr`; //redirect to ptbr site
+                break;
+            default:
+                window.location.href = `${currentURL}/ptbr`; //TODO: create a EN site
+                break;
+        }
+    </script>
+</body>
+</html>

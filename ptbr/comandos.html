@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+     user-scalable=0'>
+    <title>Comandos - Xurumin</title>
+    <meta name="title" content="Comandos - Xurumin">
+    <meta name="description" content="Um bot brasileiro que toca música (com playlists!) enquanto você joga com seus amigos e
+    te deixa ouvir aquele podcast no fim de tarde. Além disso, também tenho memes e jogos!">
+    <meta name="keywords"
+        content="discord, bot, xurumin, diversão, entretenimento, jogos, musica, podcast, playlist, spotify, youtube, games">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="Portuguese">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#514F8C">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#514F8C">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#514F8C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="./images/xurumin_cat.png" type="image/x-icon">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEW2693WD4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SEW2693WD4');
+    </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3666488206721527');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none"
+            src="https://www.facebook.com/tr?id=3666488206721527&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+    <script src="https://kit.fontawesome.com/6fc5325808.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.0.4/markdown-it.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid" id="top_bar_2">
+        <div class="row justify-content-center" id="nv_bar">
+            <div class="col-10">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="/">
+                        <img id="l_st" style="width: 140px;" src="./images/logo.png" alt="Xurumin Logo">
+                        <img id="l_white" style="width: 140px;" src="./images/logo_white.png" alt="Xurumin Logo">
+                    </a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                        <ul class="navbar-nav ml-auto p-2">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/ptbr/comandos.html">
+                                    Comandos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="cta_nav" target="_blank"
+                                    href="https://discord.com/oauth2/authorize?client_id=753723888671785042&permissions=2080374975&scope=bot">
+                                    <i class="fas fa-plus" style="margin-right: 5px;"></i>Me adicione!
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script>
+        function httpGetAsync(theUrl) {
+            return new Promise((resolve, reject) => {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function () {
+                    if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                        resolve(xmlHttp.responseText)
+                }
+                xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+                xmlHttp.send(null);
+            })
+        }
+        var md = window.markdownit();
+
+        async function run() {
+            document.getElementById("mycnt").innerHTML = "<b><img src='https://i.imgur.com/iyG3fCQ.gif' width='30px'> Carregando comandos...<b>"
+            var response = await httpGetAsync(
+                "https://raw.githubusercontent.com/xurumin/aboutme/main/help/COMMANDS.ptbr.md")
+            var html = md.render(response);
+            var m = html.split("<hr>")
+            document.getElementById("mycnt").innerHTML = m.slice(1, m.length).join("<br>")
+        }
+
+        window.onload = ()=>{
+            run()
+        }
+    </script>
+
+
+    <div class="container-fluid" id="content">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-10" id="aas">
+                <h1 id="title">Lista de comandos</h1>
+                <p id="description">
+                    Olá! Bem-vindo à minha <b>lista de comandos</b>!<br>
+                    Aqui você vai encontrar *TODOS* os meus comandos.<br>
+                    Se quiser saber os comandos mais recentes, digite <b>x!novidades</b> no seu servidor!
+                    <br>
+                    <br>
+                    <blockquote id="bq">⚠️ Atencão: Por padrão, o prefixo dos comandos é x!</blockquote>
+                </p>
+                <div id="mycnt"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="add_cta">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6" id="text">
+                <h1>Por que eu deveria usar o Xurumin?</h1>
+                <p>Porque com o Xurumin você pode deixar o seu servidor muito mais legal, adicionando a ele diversos
+                    comandos de entretenimento e de músicas (quem não curte ver uns memes enquanto ouve Seu
+                    Jorge?)<br><br>Além disso, você teria no seu servidor um gatinho fofinho e divertido com um nome
+                    super maneiro. (não, eu não estou falando do Garfield)</p>
+                <a href="https://discord.com/oauth2/authorize?client_id=753723888671785042&permissions=2080374975&scope=bot"
+                    target="_blank" class="cta animate__animated animate__fadeInUp btn" id="cta_top"><i
+                        class="fas fa-plus" style="margin-right: 5px;"></i>Me adicione!</a>
+                <a href="/ptbr/comandos.html" class="cta animate__animated animate__fadeInUp btn" id="cta_top_sec"><i
+                        class="fas fa-terminal" style="margin-right: 5px;"></i>Ver comandos</a>
+            </div>
+            <div class="col-12 col-md-6" id="cat">
+                <img src="./images/Playful cat-cuate (1).svg" alt="Gato brincando">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="footer">
+        <div class="row flex-row-reverse">
+            <div class="col-12 col-md-4">
+                <div id="right">
+                    <h1>Links úteis</h1>
+                    <ul>
+                        <li><a target="_blank" href="https://discord.com/invite/bvb8YKSCQR">Precisa de ajuda?</a></li>
+                        <li><a href="/ptbr/comandos.html">Lista de comandos</a></li>
+                        <li><a target="_blank" href="https://github.com/xurumin/">Github do Xurumin</a></li>
+                        <li><a target="_blank" href="https://top.gg/bot/753723888671785042/vote">Quer ajudar o Xurumin?
+                                Vote agora!</a></li>
+                        <li><a href="/ptbr/termos.html">Termos de Uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-8" id="copy">
+                Copyright © 2021 - Xurumin<br>
+                <span style="font-size: 10px;">Illustration by Freepik Storyset</span>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js'></script>
+</body>
+
+</html>
